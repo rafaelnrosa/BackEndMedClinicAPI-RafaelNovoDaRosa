@@ -1,8 +1,8 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 import bcrypt from 'bcryptjs';
 
-export class SeedAdmin1700000007 implements MigrationInterface {
-  name = 'SeedAdmin1700000007';
+export class SeedAdmin1700000000007 implements MigrationInterface {
+  name = 'SeedAdmin1700000000007';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     const name = process.env.ADMIN_NAME ?? 'Administrador';

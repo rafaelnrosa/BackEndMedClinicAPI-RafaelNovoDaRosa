@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class CreateAppointments1700000005 implements MigrationInterface {
-  name = 'CreateAppointments1700000005';
+export class CreateAppointments1700000000005 implements MigrationInterface {
+  name = 'CreateAppointments1700000000005';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`
