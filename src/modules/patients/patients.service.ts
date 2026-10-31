@@ -1,5 +1,6 @@
 import { AppError } from '../../errors/AppError';
 import { IPatientsRepository, PaginatedResult } from './patients.repository';
+import { isValidCpfFormat } from '../../utils/cpf';
 
 export interface CreatePatientDto {
   name: string;
@@ -31,7 +32,7 @@ export class PatientsService {
       throw new AppError('DADOS_INVALIDOS', 400, 'O campo name é obrigatório.');
     }
 
-    if (!dto.cpf || !/^\d{11}$/.test(dto.cpf)) {
+    if (!dto.cpf || !isValidCpfFormat(dto.cpf)) {
       throw new AppError('DADOS_INVALIDOS', 400, 'O CPF deve ter exatamente 11 dígitos numéricos.');
     }
 
