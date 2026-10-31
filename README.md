@@ -231,13 +231,15 @@ src/
 
 ## URL pública
 
-> _A ser preenchida após o deploy no Render_
+**https://medclinic-api-urig.onrender.com**
+
+> O serviço usa o plano Free do Render. A primeira requisição após inatividade pode demorar ~30 segundos para o servidor acordar.
 
 ---
 
 ## Board do projeto
 
-> _Link do GitHub Projects a ser inserido_
+**https://github.com/users/rafaelnrosa/projects** _(link a ser adicionado após criar o board)_
 
 ---
 
