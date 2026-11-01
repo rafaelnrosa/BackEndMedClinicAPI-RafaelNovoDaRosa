@@ -239,7 +239,9 @@ src/
 
 ## Board do projeto
 
-**https://github.com/users/rafaelnrosa/projects** _(link a ser adicionado após criar o board)_
+**https://github.com/users/rafaelnrosa/projects/3/views/1**
+
+Board Kanban com 9 cards — um por funcionalidade — todos em **Done**, cada um vinculado ao issue correspondente no repositório.
 
 ---
 
