@@ -1,4 +1,4 @@
-name: Deploy para Produção
+name: Deploy para Producao
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout do codigo
         uses: actions/checkout@v4
 
       - name: Configurar Node.js 22
@@ -20,7 +20,7 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: npm ci
 
       - name: Build TypeScript
@@ -30,9 +30,12 @@ jobs:
         run: npm run test
 
       - name: Disparar deploy no Render
-        if: ${{ secrets.RENDER_DEPLOY_HOOK_URL != '' }}
         run: |
-          curl -s -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" \
-            && echo "Deploy disparado com sucesso." \
-            || echo "Deploy Hook nao configurado ou falhou."
-        continue-on-error: true
+          if [ -n "$DEPLOY_HOOK" ]; then
+            curl -s -X POST "$DEPLOY_HOOK"
+            echo "Deploy disparado."
+          else
+            echo "RENDER_DEPLOY_HOOK_URL nao configurado, pulando."
+          fi
+        env:
+          DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
